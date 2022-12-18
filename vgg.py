@@ -8,7 +8,7 @@ from utils.utils import Utils
 import torch.backends.cudnn as cudnn
 import time 
 # Hyper-parameters   #we use Adam        #20 2500  0.01
-num_epochs, batch_size, learning_rate  = 60 ,128, 0.1 
+num_epochs, batch_size, learning_rate  = 200 ,128, 0.1 
 #                   should set batch_size to 128 (so batch_norm can have better regularization with batch norm)
 #  batch norm --> smaller batch size, better regularization
 #                   because I dont know how to use drop out in pytorch
@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     model_type = "VGG11"  #!!!  maybe try VGG19 next time?
     checkpoint_interval = 10  #20
-    former_check_point_file = f"{outdir}/{model_type}_epoch60.pth"
+    former_check_point_file = f"{outdir}/{model_type}_epoch00.pth"
     # former_check_point_file = f"{outdir}/former/{model_type}_epoch200.pth"
 
     model = VGG_net(model_type).to(device);   print(device)
@@ -172,3 +172,4 @@ if __name__ == "__main__":
     plt.tight_layout() 
     plt.show()
 #18
+
